@@ -1,14 +1,21 @@
 #!/bin/bash
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 🤖 FRIDAY - AI Assistant Template Customization
+# 🎩 JARVIS - AI Assistant Template Customisation
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# Your intelligent AI assistant for professional development
-# Inspired by Tony Stark's FRIDAY from Iron Man
+# Just A Rather Very Intelligent System
+# At your service for professional development excellence
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 set -e
 
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "🎩 JARVIS - Project Customisation System"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "Good evening, Sir. JARVIS at your service."
+echo "Shall we proceed with customising your project template?"
+echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "🤖 FRIDAY AI Assistant - Project Customization"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -326,4 +333,202 @@ echo "I'll be here to assist you throughout your development journey."
 echo "Together, we'll build something remarkable."
 echo ""
 echo "Ready when you are! 🚀"
+echo ""
+
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "✅ Customisation Complete"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "🎩 JARVIS: Excellent, Sir. All systems are now optimally configured."
+echo ""
+echo "📦 Project Designation: $PROJECT_NAME"
+echo "🛠️  Technology Stack: $TECH_STACK"
+echo "💻 Primary Language: $PRIMARY_LANGUAGE"
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "🎩 JARVIS Protocol - Recommended Workflow"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "I have prepared a series of optimised prompts for your convenience, Sir."
+echo "Simply copy and relay them to your GitHub Copilot interface."
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "📋 PROTOCOL ALPHA: Project Initialisation"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+cat << 'JARVISEND'
+JARVIS Protocol - Project Initialisation Sequence
+───────────────────────────────────────────────────────
+Good evening, Sir. JARVIS here.
+
+May I proceed with initialising a $PROJECT_TYPE project 
+utilising $TECH_STACK architecture?
+
+Initialisation Parameters:
+1. Establish industry-standard $PRIMARY_LANGUAGE project architecture
+2. Configure package management system with requisite dependencies
+3. Implement $FRAMEWORK following established best practices
+4. Adhere to architectural specifications per .github/copilot-instructions.md
+5. Document configuration summary in .github/memory/current-state.md
+
+Technical Note: Architecture shall remain modular and maintainable 
+per enterprise standards.
+
+Awaiting your confirmation to proceed, Sir.
+───────────────────────────────────────────────────────
+JARVISEND
+echo ""
+echo "🎩 JARVIS: This shall establish a proper foundation for your endeavour, Sir."
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "📋 PROTOCOL BETA: Feature Implementation"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+cat << 'JARVISEND2'
+JARVIS Protocol - Feature Development Sequence
+───────────────────────────────────────────────────────
+JARVIS reporting, Sir. Standing by for feature implementation.
+
+I recommend developing [FEATURE_NAME] with the following specifications:
+
+Quality Assurance Standards:
+1. Architecture: Conform to patterns specified in .github/instructions/architecture.md
+2. Testing Coverage: Maintain minimum 80% code coverage threshold
+3. Documentation: Provide comprehensive inline annotations and README updates
+4. Memory Records: Archive implementation summary in .github/memory/implementations/
+5. Code Styling: Strictly adhere to .prettierrc and .eslintrc.json configurations
+
+Recommendation: I suggest commencing with a straightforward yet comprehensive 
+feature to establish development patterns, Sir.
+
+Which feature would you prefer to implement first, Sir?
+───────────────────────────────────────────────────────
+JARVISEND2
+echo ""
+echo "🎩 JARVIS: I shall ensure adherence to best practices throughout, Sir."
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "📋 PROTOCOL GAMMA: Quality Assurance Review"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+cat << 'JARVISEND3'
+JARVIS Protocol - Code Quality Assurance
+───────────────────────────────────────────────────────
+Initiating comprehensive code review protocols, Sir.
+
+Review Checklist:
+1. Configuration Compliance: Verify .github/copilot-instructions.md adherence
+2. Test Coverage Analysis: Confirm >80% threshold satisfaction
+3. Security Audit: Scan for hardcoded credentials and vulnerabilities
+4. Code Style Validation: Ensure .editorconfig and .prettierrc compliance
+5. Best Practices Review: Cross-reference .github/instructions/patterns.md
+
+Analysis Report: I shall provide detailed, actionable recommendations 
+for optimisation, Sir.
+
+May I proceed with the review, Sir?
+───────────────────────────────────────────────────────
+JARVISEND3
+echo ""
+echo "�� JARVIS: Quality assurance is paramount for long-term maintainability, Sir."
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "💡 JARVIS Auxiliary Protocols"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+cat << 'JARVISEND4'
+🔍 Debugging Protocol:
+───────────────────────────────────────────────────────
+JARVIS: Initiating diagnostic sequence, Sir.
+
+Analysing and resolving this issue utilising troubleshooting 
+protocols from .github/instructions/gotchas.md. Cross-referencing 
+historical issues in .github/memory/issues/ for expedient resolution.
+───────────────────────────────────────────────────────
+
+📝 Documentation Protocol:
+───────────────────────────────────────────────────────
+JARVIS: Generating comprehensive documentation, Sir.
+
+Documenting [FEATURE] per standards outlined in 
+.github/instructions/development-workflow.md
+Updating CHANGELOG.md with versioned modifications.
+───────────────────────────────────────────────────────
+
+🧪 Testing Protocol:
+───────────────────────────────────────────────────────
+JARVIS: Implementing comprehensive test suite, Sir.
+
+Generating thorough tests for [FEATURE] following 
+.github/instructions/patterns.md specifications.
+Target: Minimum 80% code coverage as per standards.
+Utilising test framework specified in copilot-instructions.md
+───────────────────────────────────────────────────────
+
+🚀 Deployment Protocol:
+───────────────────────────────────────────────────────
+JARVIS: Preparing deployment sequence, Sir.
+
+Configuring deployment per .github/instructions/integration.md
+Updating .github/workflows/ci.yml for automated testing protocols.
+Archiving deployment process in memory/implementations/
+───────────────────────────────────────────────────────
+JARVISEND4
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "🎓 JARVIS Recommendations"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "🎩 JARVIS: Based on my experience, Sir, I recommend:"
+echo ""
+echo "✅ Reference configuration files explicitly in prompts"
+echo "   Example: \"Conform to patterns in .github/instructions/patterns.md\""
+echo ""
+echo "✅ Request memory updates following significant implementations"
+echo "   Example: \"Archive summary in .github/memory/implementations/\""
+echo ""
+echo "✅ Employ precise file path references"
+echo "   Example: \"Implement UserService per architecture.md specifications\""
+echo ""
+echo "✅ Leverage memory archives for contextual continuity"
+echo "   Example: \"Review .github/memory/ for analogous implementations\""
+echo ""
+echo "✅ Request documentation proactively"
+echo "   Example: \"Add JSDoc annotations per copilot-instructions.md\""
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "📚 Quick Access Commands"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "# Initialise repository"
+echo "git init && git add . && git commit -m \"feat: initialise $PROJECT_NAME with JARVIS assistant\""
+echo ""
+echo "# Review AI configuration"
+echo "cat .github/copilot-instructions.md"
+echo ""
+echo "# Inspect memory index"
+echo "cat .github/memory/INDEX.md"
+echo ""
+echo "# Examine project state"
+echo "cat .github/memory/current-state.md"
+echo ""
+echo "# Generate project README"
+echo "echo '# $PROJECT_NAME' > README.md"
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "�� JARVIS: All Systems Operational"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "Your project has been configured to the highest standards, Sir."
+echo ""
+echo "🎩 JARVIS Recommendation:"
+echo "   1. Activate GitHub Copilot Chat interface"
+echo "   2. Relay Protocol Alpha above to the system"
+echo "   3. I shall guide you through professional development practices"
+echo ""
+echo "I remain at your service throughout this development endeavour, Sir."
+echo "Together, we shall construct something truly remarkable."
+echo ""
+echo "Standing by for your instructions, Sir. 🎩"
 echo ""
