@@ -1,14 +1,8 @@
 # {{PROJECT_NAME}} - AI Assistant Configuration# WhatsApp Shopping Chatbot - Copilot Instructions
 
-
-
 > This file configures the AI assistant for optimal development experience## 📚 Documentation Structure
 
-
-
 ---This file is the **main index**. Detailed instructions are split into focused files:
-
-
 
 ## 📚 Quick Reference- **[Architecture](instructions/architecture.md)** - System design, components, patterns
 
@@ -44,17 +38,17 @@
 
 3. **Test Framework** - Use appropriate testing framework for {{PRIMARY_LANGUAGE}}
 
-0. **🧠 MEMORY PROTOCOL (FIRST!)** - At session start, ALWAYS check:
+4. **🧠 MEMORY PROTOCOL (FIRST!)** - At session start, ALWAYS check:
 
-4. **Reference memory** - Check `.github/memory/` for project context   - `.github/memory/INDEX.md` - Memory overview & quick lookup
+5. **Reference memory** - Check `.github/memory/` for project context - `.github/memory/INDEX.md` - Memory overview & quick lookup
 
    - `/memories/` - Agent memory extension files (auto-loaded)
 
-5. **Document in memory** - Update memory using `memory` tool   - `.github/memory/implementations/` - Recent implementations
+6. **Document in memory** - Update memory using `memory` tool - `.github/memory/implementations/` - Recent implementations
 
    - `.github/memory/current-state.md` - Current project status
 
----   - `.github/memory/github-workflows-rules.md` - CI/CD requirements
+--- - `.github/memory/github-workflows-rules.md` - CI/CD requirements
 
 1. **ULTRA-CONCISE RESPONSES** - Main chat responses MUST be brief bullet points only. NO fluff, NO intro/outro, NO apologies. Straight to the point.
 
@@ -96,15 +90,15 @@
 
 3. `.github/memory/implementations/` - Recent work
 
-4. `/memories/` - Auto-loaded| Metric          | Value     | Status           |
+4. `/memories/` - Auto-loaded| Metric | Value | Status |
 
 | --------------- | --------- | ---------------- |
 
-### Memory Organization| **Tests**       | 1121/1124 | ✅ 99.7% passing |
+### Memory Organization| **Tests** | 1121/1124 | ✅ 99.7% passing |
 
-| **Test Suites** | 37/37     | ✅ 100% passing  |
+| **Test Suites** | 37/37 | ✅ 100% passing |
 
-```| **Coverage**    | 45%+      | 🟡 Good          |
+````| **Coverage**    | 45%+      | 🟡 Good          |
 
 .github/memory/| **Lint**        | 0 errors  | ✅ Clean         |
 
@@ -329,21 +323,23 @@ See [Gotchas](instructions/gotchas.md) for full list and solutions.
 
 ### Memory Organization
 
-```
+````
+
 .github/memory/
-├── INDEX.md                    ← Start here!
-├── current-state.md           ← Project status
-├── implementations/           ← Technical implementations
-│   ├── one-click-deployment-system.md
-│   ├── dynamic-payment-implementation.md
-│   └── dynamic-product-implementation.md
-├── decisions/                 ← Architecture decisions
-│   ├── pricing-system-migration.md
-│   └── protocol-update-summary.md
-├── issues/                    ← Bugs & troubleshooting
-│   └── critical-bugs-pitfalls.md
-└── archive/                   ← Completed/outdated
-```
+├── INDEX.md ← Start here!
+├── current-state.md ← Project status
+├── implementations/ ← Technical implementations
+│ ├── one-click-deployment-system.md
+│ ├── dynamic-payment-implementation.md
+│ └── dynamic-product-implementation.md
+├── decisions/ ← Architecture decisions
+│ ├── pricing-system-migration.md
+│ └── protocol-update-summary.md
+├── issues/ ← Bugs & troubleshooting
+│ └── critical-bugs-pitfalls.md
+└── archive/ ← Completed/outdated
+
+````
 
 ### When to Update Memory
 
@@ -358,7 +354,7 @@ Add to "Recent Implementations" section
 
 # 3. Update current-state.md
 Reflect new capabilities
-```
+````
 
 **After Bug Fix:**
 

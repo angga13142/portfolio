@@ -13,7 +13,7 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.chat.useProjectTemplates": true,
   "github.copilot.referencesUsed": true,
-  
+
   // Editor Settings for Better AI Context
   "editor.inlineSuggest.enabled": true,
   "editor.suggestSelection": "first",
@@ -29,7 +29,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  
+
   // Files to include in Copilot context
   "files.associations": {
     ".env.example": "dotenv",
@@ -55,12 +55,12 @@
     "**/.next": true,
     "**/logs": true
   },
-  
+
   // Linting & Formatting
   "eslint.enable": true,
   "eslint.validate": ["javascript", "typescript"],
   "eslint.format.enable": true,
-  
+
   // Code Spell Checker
   "cSpell.enabled": true,
   "cSpell.language": "en",
@@ -96,7 +96,7 @@
     "pnpm-lock.yaml",
     "poetry.lock"
   ],
-  
+
   // Common project-specific words (customize per project)
   "cSpell.words": [
     // Add your project-specific terms here
