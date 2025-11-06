@@ -1,0 +1,91 @@
+{
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "text": "ALWAYS read .github/copilot-instructions.md before making changes"
+    },
+    {
+      "text": "ALWAYS check docs/ folder for architecture patterns before implementing features"
+    },
+    {
+      "text": "Reference .github/memory/ for project context and previous decisions"
+    },
+    {
+      "text": "Follow {{TECH_STACK}} best practices and conventions"
+    },
+    {
+      "text": "Use modular architecture with clear separation of concerns"
+    },
+    {
+      "text": "MUST run linter and tests before suggesting git push"
+    },
+    {
+      "text": "Test coverage minimum: 80% branches/functions/lines/statements"
+    },
+    {
+      "text": "Never hardcode secrets (API keys, tokens, passwords)"
+    },
+    {
+      "text": "Use environment variables for all configuration"
+    },
+    {
+      "text": "All new features require corresponding tests"
+    }
+  ],
+  "github.copilot.chat.reviewSelection.instructions": [
+    {
+      "text": "Verify no hardcoded secrets or API keys"
+    },
+    {
+      "text": "Ensure proper error handling with try-catch"
+    },
+    {
+      "text": "Check code follows project conventions"
+    },
+    {
+      "text": "Verify tests exist for new features"
+    },
+    {
+      "text": "Check for potential security vulnerabilities"
+    },
+    {
+      "text": "Ensure proper input validation and sanitization"
+    }
+  ],
+  "github.copilot.chat.testGeneration.instructions": [
+    {
+      "text": "Use project's test framework (see package.json or requirements.txt)"
+    },
+    {
+      "text": "Mock external services and APIs"
+    },
+    {
+      "text": "Test file naming: Follow project conventions"
+    },
+    {
+      "text": "Coverage target: 80% minimum for all metrics"
+    },
+    {
+      "text": "Test both success and error cases"
+    },
+    {
+      "text": "Test edge cases (null, undefined, empty, large values)"
+    },
+    {
+      "text": "Use AAA pattern: Arrange, Act, Assert"
+    }
+  ],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Use conventional commits: feat/fix/docs/test/refactor/chore"
+    },
+    {
+      "text": "Include scope when relevant: feat(module): description"
+    },
+    {
+      "text": "Keep subject under 72 characters"
+    },
+    {
+      "text": "Reference issue numbers if applicable: #123"
+    }
+  ]
+}

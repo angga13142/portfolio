@@ -1,0 +1,32 @@
+{
+  "recommendations": [
+    // AI & Productivity
+    "github.copilot",
+    "github.copilot-chat",
+    "digitarald.agent-memory",
+
+    // Code Quality
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "streetsidesoftware.code-spell-checker",
+
+    // Testing (choose based on tech stack)
+    "orta.vscode-jest", // JavaScript/TypeScript
+    // "ms-python.python",         // Python
+    // "golang.go",                // Go
+
+    // Utilities
+    "redhat.vscode-yaml",
+    "ms-vscode.vscode-json",
+    "christian-kohler.npm-intellisense",
+    "wayou.vscode-todo-highlight",
+    "gruntfuggly.todo-tree",
+    "aaron-bond.better-comments",
+    "eamodio.gitlens"
+
+    // Optional: Language-specific
+    // "ms-vscode.vscode-typescript-next",
+    // "bradlc.vscode-tailwindcss",
+    // "prisma.prisma"
+  ]
+}
