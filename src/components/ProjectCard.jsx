@@ -4,30 +4,40 @@ export default function ProjectCard({ project }) {
   return (
     <motion.a
       href={`/projects/${project.slug}`}
-      className="group rounded-xl overflow-hidden border border-black/5 dark:border-white/10 bg-white dark:bg-[#151515] hover:shadow-card transition block"
+      className="dark-card group rounded-xl overflow-hidden block"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       {project.cover && (
-        <div className="aspect-video bg-black/5 dark:bg-white/5 overflow-hidden">
+        <div className="aspect-video bg-dark-800 overflow-hidden">
           <img
             src={project.cover}
             alt={project.alt || project.title}
-            className="w-full h-full object-cover group-hover:scale-[1.02] transition"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
             width="1200"
             height="675"
           />
         </div>
       )}
-      <div className="p-4">
-        <h3 className="font-semibold text-lg mb-1">{project.title}</h3>
-        <p className="text-sm text-black/70 dark:text-white/70 line-clamp-3">{project.summary}</p>
+      <div className="p-6">
+        <h3 className="font-bold text-xl mb-2 text-gray-50 group-hover:text-primary-400 transition-colors">
+          {project.title}
+        </h3>
+        <p className="text-sm text-gray-400 line-clamp-3 mb-4 leading-relaxed">
+          {project.summary}
+        </p>
         {project.tags && (
-          <div className="mt-3 flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2">
             {project.tags.map((t) => (
-              <span key={t} className="text-xs px-2 py-1 rounded bg-black/5 dark:bg-white/10">{t}</span>
+              <span 
+                key={t} 
+                className="text-xs px-3 py-1.5 rounded-md bg-dark-700 text-gray-300 border border-gray-600/30 hover:border-primary-500/50 transition-colors"
+              >
+                {t}
+              </span>
             ))}
           </div>
         )}

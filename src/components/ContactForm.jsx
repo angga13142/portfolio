@@ -44,56 +44,61 @@ export default function ContactForm() {
       action="https://formspree.io/f/your-id"
       method="POST"
       onSubmit={handleSubmit}
-      className="space-y-4 mb-12"
+      className="dark-card p-8"
       aria-describedby="form-status"
     >
       <input type="text" name="_gotcha" className="hidden" tabIndex="-1" aria-hidden="true" />
-      <div>
-        <label className="block text-xs font-semibold mb-1" htmlFor="name">
-          Nama
-        </label>
-        <input
-          id="name"
-          name="name"
-          required
-          className="w-full rounded border border-black/10 dark:border-white/20 bg-white dark:bg-[#1b1b1b] px-3 py-2 text-sm"
-        />
+      <div className="space-y-5">
+        <div>
+          <label className="block text-sm font-semibold mb-2 text-gray-300" htmlFor="name">
+            Nama
+          </label>
+          <input
+            id="name"
+            name="name"
+            required
+            className="w-full rounded-lg border border-gray-600/30 bg-dark-700 text-gray-300 px-4 py-3 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition"
+            placeholder="Nama Anda"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-semibold mb-2 text-gray-300" htmlFor="email">
+            Email
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            className="w-full rounded-lg border border-gray-600/30 bg-dark-700 text-gray-300 px-4 py-3 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition"
+            placeholder="email@example.com"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-semibold mb-2 text-gray-300" htmlFor="message">
+            Pesan
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+            className="w-full rounded-lg border border-gray-600/30 bg-dark-700 text-gray-300 px-4 py-3 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition resize-none"
+            placeholder="Ceritakan tentang proyek atau pertanyaan Anda..."
+          ></textarea>
+        </div>
+        <button
+          disabled={loading}
+          className="cta-button w-full disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {loading ? 'Mengirim...' : 'Kirim Pesan'}
+        </button>
+        {status && (
+          <p id="form-status" className="text-sm mt-3 text-center text-gray-300" aria-live="polite">
+            {status}
+          </p>
+        )}
       </div>
-      <div>
-        <label className="block text-xs font-semibold mb-1" htmlFor="email">
-          Email
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          className="w-full rounded border border-black/10 dark:border-white/20 bg-white dark:bg-[#1b1b1b] px-3 py-2 text-sm"
-        />
-      </div>
-      <div>
-        <label className="block text-xs font-semibold mb-1" htmlFor="message">
-          Pesan
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          required
-          className="w-full rounded border border-black/10 dark:border-white/20 bg-white dark:bg-[#1b1b1b] px-3 py-2 text-sm"
-        ></textarea>
-      </div>
-      <button
-        disabled={loading}
-        className="px-5 py-3 bg-accent text-white rounded-lg text-sm font-medium hover:shadow-card transition disabled:opacity-50"
-      >
-        {loading ? 'Mengirim...' : 'Kirim'}
-      </button>
-      {status && (
-        <p id="form-status" className="text-xs mt-2" aria-live="polite">
-          {status}
-        </p>
-      )}
     </form>
   );
 }

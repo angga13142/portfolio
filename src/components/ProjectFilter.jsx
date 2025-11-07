@@ -15,19 +15,32 @@ export default function ProjectFilter({ projects }) {
   );
   return (
     <div>
-      <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex flex-wrap gap-3 mb-10">
         {allTags.map(tag => (
           <button
             key={tag}
-            className={`text-xs px-3 py-1 rounded-full border transition ${active===tag? 'bg-accent text-white border-accent' : 'hover:border-accent border-black/10 dark:border-white/20'}`}
+            className={`text-sm px-4 py-2 rounded-lg border-2 font-medium transition-all ${
+              active === tag 
+                ? 'bg-primary-500 text-white border-primary-500 shadow-glow-blue' 
+                : 'bg-dark-800 text-gray-400 border-gray-600/30 hover:border-primary-500 hover:text-primary-400'
+            }`}
             onClick={() => setActive(tag)}
-          >{tag}</button>
+          >
+            {tag}
+          </button>
         ))}
       </div>
       <motion.div layout className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence>
           {filtered.map(p => (
-            <motion.div key={p.slug} layout initial={{opacity:0, scale:0.98}} animate={{opacity:1, scale:1}} exit={{opacity:0}}>
+            <motion.div 
+              key={p.slug} 
+              layout 
+              initial={{ opacity: 0, scale: 0.95 }} 
+              animate={{ opacity: 1, scale: 1 }} 
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+            >
               <ProjectCard project={p} />
             </motion.div>
           ))}
