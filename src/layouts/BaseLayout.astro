@@ -55,5 +55,42 @@ import '../styles/global.css';
     <main id="content">
       <slot />
     </main>
+    
+    <!-- Scroll animations -->
+    <script>
+      // Fade-in on scroll utility
+      function initScrollAnimations() {
+        if (!('IntersectionObserver' in window)) return;
+
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observerCallback = (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('fade-in-visible');
+            }
+          });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        const elementsToAnimate = document.querySelectorAll('[data-fade-in]');
+        
+        elementsToAnimate.forEach((el, index) => {
+          const delay = parseInt(el.dataset.fadeIn) || index * 100;
+          el.style.transitionDelay = `${delay}ms`;
+          observer.observe(el);
+        });
+      }
+
+      // Initialize
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollAnimations);
+      } else {
+        initScrollAnimations();
+      }
+    </script>
   </body>
 </html>

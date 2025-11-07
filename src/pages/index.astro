@@ -9,7 +9,7 @@ const featured = projects.slice(0,3);
 <BaseLayout title="Muhammad Nurhidayat Gani">
   <Header />
   <main class="max-w-5xl mx-auto px-4 py-16">
-    <section class="mb-20">
+    <section class="mb-20" data-fade-in="0">
       <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4">Muhammad Nurhidayat Gani</h1>
       <p class="text-xl max-w-xl text-black/70 dark:text-white/70 mb-8">Membangun Solusi Digital dengan Presisi Struktural.</p>
       <div class="flex gap-4">
@@ -17,18 +17,18 @@ const featured = projects.slice(0,3);
         <a href="/about" class="px-5 py-3 border border-black/10 dark:border-white/20 rounded-lg text-sm font-medium hover:border-accent transition">Baca Kisah Saya</a>
       </div>
     </section>
-    <section class="mb-24" id="proyek">
+    <section class="mb-24" id="proyek" data-fade-in="100">
       <h2 class="text-2xl font-semibold mb-6">Proyek Unggulan</h2>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {featured.map(p => <ProjectCard project={p} />)}
+        {featured.map((p, i) => <ProjectCard project={p} key={p.slug} />)}
       </div>
     </section>
-    <section class="mb-24">
+    <section class="mb-24" data-fade-in="200">
       <h2 class="text-2xl font-semibold mb-4">Perkenalan Singkat</h2>
       <p class="max-w-2xl text-sm leading-relaxed text-black/70 dark:text-white/70 mb-4">Saya sedang bertransisi dari seorang operator excavator profesional menjadi developer yang fokus membangun solusi digital yang kokoh dan presisi. Mengutamakan struktur, performa, dan pengalaman pengguna.</p>
       <a href="/about" class="text-accent text-sm hover:underline">Pelajari lebih lanjut →</a>
     </section>
-    <section class="py-16 border-t border-black/5 dark:border-white/10 text-center">
+    <section class="py-16 border-t border-black/5 dark:border-white/10 text-center" data-fade-in="300">
       <h2 class="text-3xl font-bold mb-4">Siap Membangun Sesuatu?</h2>
       <p class="text-sm text-black/70 dark:text-white/70 mb-6">Mari diskusikan ide atau kebutuhan proyek Anda.</p>
       <a href="/contact" class="px-6 py-3 bg-accent text-white rounded-lg text-sm font-medium hover:shadow-card transition">Hubungi Saya</a>
