@@ -56,11 +56,11 @@ import CustomCursor from '../components/CustomCursor.jsx';
   </head>
   <body class="font-sans bg-dark-900 text-gray-300 antialiased relative min-h-screen overflow-x-hidden">
     <!-- Global animated gradient background -->
-    <div class="fixed inset-0 hero-gradient-bg opacity-50 pointer-events-none" style="z-index: -1;"></div>
-    <div class="fixed inset-0 noise-texture opacity-20 pointer-events-none" style="z-index: -1;"></div>
+    <div class="fixed inset-0 hero-gradient-bg pointer-events-none" style="z-index: 0;"></div>
+    <div class="fixed inset-0 noise-texture opacity-30 pointer-events-none" style="z-index: 0;"></div>
     
     <CustomCursor client:load />
-    <main id="content" class="relative">
+    <main id="content" class="relative" style="z-index: 1;">
       <slot />
     </main>
     
