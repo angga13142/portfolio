@@ -9,9 +9,9 @@ const featured = projects.slice(0,3);
 <BaseLayout title="Muhammad Nurhidayat Gani">
   <Header />
   <main class="max-w-6xl mx-auto px-4 py-12 sm:py-20">
-    <!-- HERO SECTION - Dark-First Design -->
-    <section class="mb-32 py-16 relative noise-texture" data-fade-in="0">
-      <div class="max-w-4xl relative z-10">
+    <!-- HERO SECTION - Dark-First Design with Parallax -->
+    <section class="mb-32 py-16 relative noise-texture parallax-container" data-fade-in="0">
+      <div class="max-w-4xl relative z-10 parallax-layer parallax-slow">
         <h1 class="hero-text text-gray-50 mb-6">
           Crafting Digital <span class="gradient-text-animated">Experiences</span>
         </h1>
@@ -71,3 +71,46 @@ const featured = projects.slice(0,3);
     </section>
   </main>
 </BaseLayout>
+
+<script>
+  // Parallax scroll effect
+  function initParallax() {
+    const parallaxElements = document.querySelectorAll('.parallax-layer');
+    if (!parallaxElements.length) return;
+
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    let ticking = false;
+
+    const updateParallax = () => {
+      const scrollY = window.scrollY;
+      
+      parallaxElements.forEach((element) => {
+        if (element.classList.contains('parallax-slow')) {
+          element.style.transform = `translateY(${scrollY * 0.2}px)`;
+        } else if (element.classList.contains('parallax-medium')) {
+          element.style.transform = `translateY(${scrollY * 0.4}px)`;
+        } else if (element.classList.contains('parallax-fast')) {
+          element.style.transform = `translateY(${scrollY * 0.6}px)`;
+        }
+      });
+
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+  }
+
+  // Initialize on page load
+  document.addEventListener('astro:page-load', initParallax);
+  initParallax();
+</script>

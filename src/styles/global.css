@@ -575,3 +575,185 @@ a, button {
     animation: none !important;
   }
 }
+
+/* ============================================
+   INTERACTIVE ELEMENTS (Phase 8)
+   ============================================ */
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3b82f6;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  opacity: 0;
+}
+
+.custom-cursor.active {
+  opacity: 1;
+}
+
+.custom-cursor.hover {
+  transform: scale(1.5);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+/* Cursor trail */
+.cursor-trail {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: #3b82f6;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+/* Parallax container */
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Parallax speeds */
+.parallax-slow {
+  transform: translateY(calc(var(--scroll) * 0.3px));
+}
+
+.parallax-medium {
+  transform: translateY(calc(var(--scroll) * 0.5px));
+}
+
+.parallax-fast {
+  transform: translateY(calc(var(--scroll) * 0.8px));
+}
+
+/* Tilt effect on cards */
+.tilt-effect {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.tilt-effect:hover {
+  transform: perspective(1000px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
+}
+
+/* Smooth scroll snap */
+.scroll-snap-container {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.scroll-snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Interactive background */
+.interactive-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(59, 130, 246, 0.05) 0%,
+    transparent 50%
+  );
+  transition: background 0.3s ease;
+}
+
+/* Reveal on scroll */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Number counter animation */
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+}
+
+.counter-number {
+  animation: counter 2s ease-out;
+  counter-reset: num var(--num);
+}
+
+.counter-number::after {
+  content: counter(num);
+}
+
+/* Loading bar */
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: 10000;
+}
+
+.loading-bar.loading {
+  animation: loading-progress 2s ease-in-out;
+}
+
+@keyframes loading-progress {
+  0% { transform: scaleX(0); }
+  50% { transform: scaleX(0.7); }
+  100% { transform: scaleX(1); opacity: 0; }
+}
+
+/* Reduced Motion Override for Phase 8 */
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor,
+  .cursor-trail,
+  .parallax-slow,
+  .parallax-medium,
+  .parallax-fast,
+  .tilt-effect:hover {
+    transform: none !important;
+    animation: none !important;
+  }
+  
+  .interactive-bg {
+    background: none !important;
+  }
+  
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Hide custom cursor on mobile */
+@media (max-width: 768px) {
+  .custom-cursor,
+  .cursor-trail {
+    display: none;
+  }
+}

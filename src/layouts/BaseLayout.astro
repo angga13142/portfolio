@@ -2,6 +2,7 @@
 const { title = 'Muhammad Nurhidayat Gani — Heavy Equipment Operator turned Software Developer', description = 'Professional portfolio showcasing career transition from Heavy Equipment Operator (95% efficiency) to Software Developer. Building reliable systems with operational precision.' } = Astro.props;
 import '../styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
+import CustomCursor from '../components/CustomCursor.jsx';
 ---
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
@@ -54,6 +55,7 @@ import { ViewTransitions } from 'astro:transitions';
     </script>
   </head>
   <body class="font-sans bg-dark-900 text-gray-300 antialiased">
+    <CustomCursor client:load />
     <main id="content">
       <slot />
     </main>
