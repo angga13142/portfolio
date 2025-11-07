@@ -12,25 +12,28 @@ const { project } = Astro.props;
 <BaseLayout title={`${project.title} — Muhammad Nurhidayat Gani`}>
   <Header />
   <main class="max-w-4xl mx-auto px-4 py-16">
-    <!-- Project Header -->
-    <div class="mb-12">
-      <h1 class="text-4xl font-bold mb-4">{project.title}</h1>
-      <p class="text-lg text-black/70 dark:text-white/70 mb-6">{project.summary}</p>
-      
-      <!-- Tags -->
-      <div class="flex flex-wrap gap-2 mb-6">
-        {project.tags?.map(tag => (
-          <span class="px-3 py-1 text-sm rounded-full bg-black/5 dark:bg-white/10">
-            {tag}
-          </span>
-        ))}
-      </div>
+    <!-- Project Header with Gradient Background -->
+    <section class="mb-12 py-12 px-8 relative overflow-hidden rounded-2xl">
+      <div class="absolute inset-0 hero-gradient-bg"></div>
+      <div class="absolute inset-0 noise-texture opacity-40"></div>
+      <div class="relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-50">{project.title}</h1>
+        <p class="text-lg text-gray-400 mb-6">{project.summary}</p>
+        
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          {project.tags?.map(tag => (
+            <span class="px-3 py-1 text-sm rounded-full bg-dark-800/80 backdrop-blur text-gray-300 border border-gray-600/30">
+              {tag}
+            </span>
+          ))}
+        </div>
 
-      <!-- Action Buttons -->
-      <div class="flex flex-wrap gap-4">
-        {project.links?.demo && (
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-4">
+          {project.links?.demo && (
           <a 
-            class="px-6 py-3 bg-accent text-white rounded-lg hover:shadow-lg transition-shadow"
+            class="px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-semibold"
             href={project.links.demo} 
             target="_blank" 
             rel="noopener noreferrer"
@@ -40,7 +43,7 @@ const { project } = Astro.props;
         )}
         {project.links?.source && (
           <a 
-            class="px-6 py-3 border-2 border-black/10 dark:border-white/20 rounded-lg hover:border-accent transition-colors"
+            class="px-6 py-3 border-2 border-gray-600 text-gray-300 rounded-lg hover:border-primary-500 hover:text-primary-400 transition-colors font-semibold"
             href={project.links.source} 
             target="_blank" 
             rel="noopener noreferrer"
@@ -48,9 +51,9 @@ const { project } = Astro.props;
             Source Code
           </a>
         )}
+        </div>
       </div>
-    </div>
-
+    </section>
     <!-- Project Cover Image -->
     {project.cover && (
       <img 

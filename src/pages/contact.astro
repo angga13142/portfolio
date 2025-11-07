@@ -6,15 +6,19 @@ import ContactForm from '../components/ContactForm.jsx';
 <BaseLayout title="Kontak — Muhammad Nurhidayat Gani">
   <Header />
   <main class="max-w-3xl mx-auto px-4 py-16">
-    <!-- Page Header -->
-    <div class="mb-12">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-50">
-        Mari <span class="gradient-text">Berbicara</span>
-      </h1>
-      <p class="text-lg text-gray-400 max-w-xl">
-        Punya proyek atau pertanyaan? Saya siap membantu. Kirim pesan dan saya akan merespons dalam 24 jam.
-      </p>
-    </div>
+    <!-- Page Header with Gradient Background -->
+    <section class="mb-12 py-12 px-8 relative overflow-hidden rounded-2xl">
+      <div class="absolute inset-0 hero-gradient-bg"></div>
+      <div class="absolute inset-0 noise-texture opacity-40"></div>
+      <div class="relative z-10">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-50">
+          Mari <span class="gradient-text">Berbicara</span>
+        </h1>
+        <p class="text-lg text-gray-400 max-w-xl">
+          Punya proyek atau pertanyaan? Saya siap membantu. Kirim pesan dan saya akan merespons dalam 24 jam.
+        </p>
+      </div>
+    </section>
     
     <!-- Contact Form -->
     <div class="mb-16">

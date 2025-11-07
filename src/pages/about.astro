@@ -5,7 +5,15 @@ import Header from '../components/Header.astro';
 <BaseLayout title="Tentang Saya — Muhammad Nurhidayat Gani">
   <Header />
   <main class="max-w-5xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold mb-12 text-gray-50">Tentang Saya</h1>
+    <!-- Page Header with Gradient Background -->
+    <section class="mb-12 py-12 px-8 relative overflow-hidden rounded-2xl">
+      <div class="absolute inset-0 hero-gradient-bg"></div>
+      <div class="absolute inset-0 noise-texture opacity-40"></div>
+      <div class="relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-50">Tentang Saya</h1>
+      </div>
+    </section>
+    
     <div class="grid md:grid-cols-3 gap-12 items-start mb-20">
       <div class="md:col-span-1">
         <div class="aspect-square rounded-xl overflow-hidden bg-dark-800 border border-gray-600/30">
