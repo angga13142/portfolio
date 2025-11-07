@@ -1,6 +1,7 @@
 ---
 const { title = 'Muhammad Nurhidayat Gani — Heavy Equipment Operator turned Software Developer', description = 'Professional portfolio showcasing career transition from Heavy Equipment Operator (95% efficiency) to Software Developer. Building reliable systems with operational precision.' } = Astro.props;
 import '../styles/global.css';
+import { ViewTransitions } from 'astro:transitions';
 ---
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
@@ -21,6 +22,7 @@ import '../styles/global.css';
     <meta name="twitter:image" content="/og-default.png" />
     <link rel="icon" href="/favicon.svg" />
     <title>{title}</title>
+    <ViewTransitions />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">

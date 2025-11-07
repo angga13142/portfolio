@@ -500,3 +500,78 @@ a, button {
     display: none;
   }
 }
+
+/* ============================================
+   PAGE TRANSITIONS (Phase 7 - Astro View Transitions)
+   ============================================ */
+
+/* Customize default transition */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fade transition */
+::view-transition-old(root) {
+  animation-name: fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: fade-in;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Optional: Slide transition for specific elements */
+.transition-slide {
+  view-transition-name: slide-content;
+}
+
+::view-transition-old(slide-content) {
+  animation: slide-out-left 0.4s ease-out;
+}
+
+::view-transition-new(slide-content) {
+  animation: slide-in-right 0.4s ease-out;
+}
+
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Reduced motion for transitions */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root),
+  ::view-transition-old(slide-content),
+  ::view-transition-new(slide-content) {
+    animation: none !important;
+  }
+}
