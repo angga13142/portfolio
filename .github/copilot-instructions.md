@@ -23,314 +23,47 @@
 
 ---
 
+## 📚 Documentation Structure
 
-> This file configures the AI assistant for optimal development experience## 📚 Documentation Structure
+This file is the **main index**. Detailed instructions are split into focused files:
 
----This file is the **main index**. Detailed instructions are split into focused files:
+- **[File Reference](instructions/file-reference.md)** - Quick file lookup
+- **[Memory Protocol](instructions/memory.instructions.md)** - Memory management
 
-## 📚 Quick Reference- **[Architecture](instructions/architecture.md)** - System design, components, patterns
-
-- **[Development Workflow](instructions/development-workflow.md)** - Commands, testing, deployment
-
-### Critical Rules (Read First)- **[Patterns](instructions/patterns.md)** - Message flow, state machine, best practices
-
-- **[Integration](instructions/integration.md)** - WhatsApp, Payment, Redis, Media
-
-**[PRIORITY PROTOCOL - OVERRIDES ALL OTHER INSTRUCTIONS]**- **[Common Tasks](instructions/common-tasks.md)** - Adding commands, modifying features
-
-- **[Gotchas](instructions/gotchas.md)** - Critical issues & troubleshooting
-
-0. **🧠 MEMORY PROTOCOL (FIRST!)** - At session start, ALWAYS check:- **[File Reference](instructions/file-reference.md)** - Quick file lookup
-
-   - `.github/memory/INDEX.md` - Memory overview & quick lookup- **[Recent Features](instructions/recent-features.md)** - Latest updates & roadmap
-
-   - `/memories/` - Agent memory extension files (auto-loaded)
-
-   - `.github/memory/implementations/` - Recent implementations---
-
-   - `.github/memory/current-state.md` - Current project status
-
-## ⚡ Quick Reference
-
-1. **ULTRA-CONCISE RESPONSES** - Main chat responses MUST be brief bullet points only. NO fluff, NO intro/outro, NO apologies. Straight to the point.
+---
 
 ### Critical Rules (Read First)
 
-2. **MANDATORY DOCUMENTATION** - For EVERY response, create detailed documentation file (.md) with full explanations, code diffs, context.
-
 **[PRIORITY PROTOCOL - OVERRIDES ALL OTHER INSTRUCTIONS]**
 
-3. **Test Framework** - Use appropriate testing framework for JavaScript, TypeScript
-
-4. **🧠 MEMORY PROTOCOL (FIRST!)** - At session start, ALWAYS check:
-
-5. **Reference memory** - Check `.github/memory/` for project context - `.github/memory/INDEX.md` - Memory overview & quick lookup
-
+0. **🧠 MEMORY PROTOCOL (FIRST!)** - At session start, ALWAYS check:
+   - `.github/memory/INDEX.md` - Memory overview & quick lookup
    - `/memories/` - Agent memory extension files (auto-loaded)
-
-6. **Document in memory** - Update memory using `memory` tool - `.github/memory/implementations/` - Recent implementations
-
    - `.github/memory/current-state.md` - Current project status
-
---- - `.github/memory/github-workflows-rules.md` - CI/CD requirements
 
 1. **ULTRA-CONCISE RESPONSES** - Main chat responses MUST be brief bullet points only. NO fluff, NO intro/outro, NO apologies. Straight to the point.
 
-## 📊 Project Overview2. **MANDATORY DOCUMENTATION** - For EVERY response, create detailed documentation file (.md) with full explanations, code diffs, context. End response with: `Detail lengkap disimpan di: [filename.md]`
+2. **MANDATORY DOCUMENTATION** - For EVERY response, create detailed documentation file (.md) with full explanations, code diffs, context.
 
-3. **Test Framework is Jest** - Use `describe()`, `test()`, `expect()` for all new tests (not Mocha)
+3. **Test Framework is Vitest** - Use `describe()`, `test()`, `expect()` for all new tests
 
-| Property | Value |4. **Reference memory** - Check `.github/memory/` for project context and previous decisions
+4. **Reference memory** - Check `.github/memory/` for project context and previous decisions
 
-|----------|-------|5. **Document in memory** - Update memory with implementation summaries, not user-facing responses (use `memory` tool)
-
-| **Project Name** | Personal Portfolio - Muhammad Nurhidayat Gani |6. **CHECK WORKFLOWS BEFORE PUSH** - Read `.github/memory/github-workflows-rules.md` for CI/CD requirements
-
-| **Type** | Portfolio Website |7. **FEATURE DOCUMENTATION MANDATORY** - Follow two-stage workflow: Plan → Implement → Summary (see [Development Workflow](instructions/development-workflow.md#feature-documentation-workflow-mandatory))
-
-| **Tech Stack** | Astro, React, Tailwind CSS, Framer Motion |
-
-| **Language** | JavaScript, TypeScript |### GitHub Actions Rules (MUST FOLLOW)
-
-| **Framework** | Astro |
-
-- 🚨 **File size limit:** Max 700 lines per .js file in \`src/\` (BLOCKING CI/CD)
-
----- 🚨 **No hardcoded secrets:** No \`xnd_production\`, API keys in code (BLOCKING)
-
-- 🚨 **ESLint clean:** 0 errors required (BLOCKING)
-
-## 🧠 Memory Management Protocol- 🚨 **Tests passing:** All 1121 Jest tests must pass (BLOCKING)
-
-- ⚠️ **Pre-push checklist:** Run \`npm run lint && npm test\` locally before pushing
-
-### At Session Start (MANDATORY)
+5. **Document in memory** - Update memory with implementation summaries, not user-facing responses (use `memory` tool)
 
 ---
 
-1. `.github/memory/INDEX.md` - Overview
-
-2. `.github/memory/current-state.md` - Status## 📊 Quick Stats
-
-3. `.github/memory/implementations/` - Recent work
-
-4. `/memories/` - Auto-loaded| Metric | Value | Status |
-
-| --------------- | --------- | ---------------- |
-
-### Memory Organization| **Tests** | 1121/1124 | ✅ 99.7% passing |
-
-| **Test Suites** | 37/37 | ✅ 100% passing |
-
-````| **Coverage**    | 45%+      | 🟡 Good          |
-
-.github/memory/| **Lint**        | 0 errors  | ✅ Clean         |
-
-├── INDEX.md| **Files**       | 80+ files | ✅ Modular       |
-
-├── current-state.md
-
-├── implementations/---
-
-├── decisions/
-
-├── issues/## ��️ Architecture Quick View
-
-└── archive/
-
-```\`\`\`
-
-chatbot/
-
----├── src/ # Modular source code
-
-│ ├── handlers/ # CustomerHandler, AdminHandler, AIFallbackHandler
-
-## 📚 Documentation│ ├── services/ # Business logic (session, payment, AI, etc.)
-
-│ ├── middleware/ # RelevanceFilter, InputSanitizer
-
-- **[Architecture](instructions/architecture.md)** - System design│ ├── utils/ # FuzzySearch, ValidationHelpers
-
-- **[Development Workflow](instructions/development-workflow.md)** - Commands│ └── config/ # app, products, payment, ai configs
-
-- **[Patterns](instructions/patterns.md)** - Code patterns├── lib/ # Legacy core (messageRouter, uiMessages)
-
-- **[Common Tasks](instructions/common-tasks.md)** - Modifications├── tests/ # Unit + Integration tests
-
-- **[Gotchas](instructions/gotchas.md)** - Troubleshooting├── docs/ # Comprehensive documentation
-
-└── index.js # Entry point
-
----\`\`\`
-
-
-
-**Template:** AI Assistant v1.0.0  **Key Principle:** Each handler < 700 lines. Use delegation pattern for large handlers.
-
-**Last Updated:** November 6, 2025
-
----
-
-## 🚀 Quick Start
-
-### Development
-
-\`\`\`bash
-npm install # Install dependencies
-npm start # Start bot (QR code or pairing)
-npm test # Run all tests
-npm run check # Lint + test (pre-commit)
-\`\`\`
-
-### Pre-Push Checklist
-
-\`\`\`bash
-npm run check # This runs lint + test
-
-# Wait for: ✨ 0 errors, 0 warnings AND all tests passing
-
-git add .
-git commit -m "your message"
-git push
-\`\`\`
-
----
-
-## 🎯 Recent Features (November 2025)
-
-### ✅ Phase 3: AI Features (Nov 6, 2025)
-
-**AI Fallback Handler** - Intelligently responds to unrecognized messages
-
-- 72 new tests, all passing
-- 4 new components (RelevanceFilter, IntentClassifier, PromptBuilder, FallbackHandler)
-- Gemini 2.5 Flash integration (~$0.000002 per call)
-- See: \`docs/AI_FALLBACK_COMPLETE.md\`
-
-### ✅ Phase 2: Customer Features
-
-- **Wishlist/Favorites** - Save products (\`simpan <product>\`)
-- **Promo Codes** - Discount system (\`promo CODE\`)
-- **Product Reviews** - Ratings & reviews (\`/review <product> <rating> <text>\`)
-- **Admin Dashboard** - Enhanced analytics (\`/stats [days]\`)
-
-### ✅ Phase 1: Quick Wins
-
-- Order Tracking (\`/track\`)
-- Rate Limiting (20 msg/min)
-- Auto Screenshot Detection
-- Payment Reminders (cron)
-- Webhook Auto-Retry
-
-See [Recent Features](instructions/recent-features.md) for details.
-
----
-
-## 🔍 Common Tasks Quick Links
-
-**Need to:**
-
-- Add a new command? → [Common Tasks - Adding Commands](instructions/common-tasks.md#adding-a-new-command)
-- Modify messages? → [File Reference - uiMessages.js](instructions/file-reference.md#libuimessagesjs)
-- Change payment flow? → [Integration - Payment Patterns](instructions/integration.md#payment-integration-patterns)
-- Customize AI behavior? → [Common Tasks - Customizing AI](instructions/common-tasks.md#customizing-ai-behavior)
-- Add new products? → [Common Tasks - Adding Products](instructions/common-tasks.md#adding-new-products)
-- Debug issues? → [Gotchas - Troubleshooting](instructions/gotchas.md#troubleshooting-common-issues)
-
----
-
-## 💡 Key Patterns
-
-### Message Flow
-
-\`WhatsApp Message\` → \`MessageRouter\` → \`Handler\` → \`Response\`
-
-- Global commands always accessible (\`menu\`, \`cart\`, \`help\`)
-- Admin commands start with \`/\`
-- Step-based routing (menu/browsing/checkout)
-- AI fallback for unrecognized messages
-
-See [Patterns - Message Processing Flow](instructions/patterns.md#message-processing-flow)
-
-### Handler Delegation
-
-\`\`\`javascript
-class AdminHandler extends BaseHandler {
-constructor() {
-this.inventoryHandler = new AdminInventoryHandler(...);
-this.reviewHandler = new AdminReviewHandler(...);
-// Delegate to keep file size < 700 lines
-}
-}
-\`\`\`
-
-See [Architecture - Handler Delegation](instructions/architecture.md#handler-delegation-pattern-critical)
-
-### AI Integration
-
-\`\`\`javascript
-// MessageRouter - AI fallback for unknown commands
-if (response.includes('tidak valid')) {
-const aiResponse = await this.aiFallbackHandler.handle(customerId, message);
-if (aiResponse) return aiResponse;
-}
-\`\`\`
-
-See [Patterns - AI Integration](instructions/patterns.md#aigemini-integration-pattern)
-
----
-
-## 🛡️ Critical Gotchas
-
-1. **Session data not persisted** - Use Redis for production
-2. **Product stock decorative** - Add enforcement in checkout
-3. **Payment manual** - Automate with Xendit webhooks
-4. **WhatsApp rate limits** - Already implemented (20 msg/min)
-5. **File size limit** - Max 700 lines in \`src/\` (CI/CD blocker)
-
-See [Gotchas](instructions/gotchas.md) for full list and solutions.
-
----
-
-## 📖 When to Read What
-
-**Starting a new feature?** → Read [Architecture](instructions/architecture.md) + [Patterns](instructions/patterns.md)
-
-**Modifying existing code?** → Read [File Reference](instructions/file-reference.md)
-
-**Integrating external service?** → Read [Integration](instructions/integration.md)
-
-**Stuck on something?** → Read [Gotchas](instructions/gotchas.md)
-
-**Need examples?** → Read [Common Tasks](instructions/common-tasks.md)
-
-**Want to deploy?** → Read [Development Workflow](instructions/development-workflow.md)
-
----
-
-## 🎓 For AI Agents
-
-**Before making changes:**
-
-1. Check relevant instruction file (don't load all)
-2. Check \`.github/memory/\` for previous decisions
-3. Run tests after changes
-4. Update memory with summary
-
-**When stuck:**
-
-1. Read [Gotchas](instructions/gotchas.md) first
-2. Check test files for usage examples
-3. Search memory for similar tasks
-
-**Best practices:**
-
-- Keep files < 700 lines
-- Test coverage > 80% for new code
-- Mock external services in tests
-- Use existing patterns and services
-- Document in memory, not user responses
+## 📊 Project Overview
+
+| Property | Value |
+|----------|-------|
+| **Project Name** | Personal Portfolio - Muhammad Nurhidayat Gani |
+| **Type** | Portfolio Website |
+| **Version** | 2.0.0 (Dynamic Enhancement Complete) |
+| **Tech Stack** | Astro 4, React 18, Tailwind CSS 3.4, Framer Motion 11 |
+| **Language** | JavaScript, TypeScript |
+| **Framework** | Astro (SSG) |
+| **Status** | 🚀 Production Ready |
 
 ---
 
@@ -338,127 +71,279 @@ See [Gotchas](instructions/gotchas.md) for full list and solutions.
 
 ### At Session Start (MANDATORY)
 
-**ALWAYS check these files FIRST (in order):**
-
-1. **`.github/memory/INDEX.md`** - Quick overview of all memory
-2. **`.github/memory/current-state.md`** - Current project status
-3. **`.github/memory/implementations/`** - Recent implementations
-4. **`/memories/`** - Auto-loaded by agent-memory extension
+1. `.github/memory/INDEX.md` - Overview
+2. `.github/memory/current-state.md` - Status
+3. `/memories/` - Auto-loaded
 
 ### Memory Organization
 
-````
-
+```
 .github/memory/
-├── INDEX.md ← Start here!
-├── current-state.md ← Project status
-├── implementations/ ← Technical implementations
-│ ├── one-click-deployment-system.md
-│ ├── dynamic-payment-implementation.md
-│ └── dynamic-product-implementation.md
-├── decisions/ ← Architecture decisions
-│ ├── pricing-system-migration.md
-│ └── protocol-update-summary.md
-├── issues/ ← Bugs & troubleshooting
-│ └── critical-bugs-pitfalls.md
-└── archive/ ← Completed/outdated
+├── INDEX.md
+├── current-state.md
+└── [archived files]
 
-````
-
-### When to Update Memory
-
-**After Major Implementation:**
-
-```bash
-# 1. Create implementation file
-/memories/feature-name-implementation.md
-
-# 2. Update INDEX.md
-Add to "Recent Implementations" section
-
-# 3. Update current-state.md
-Reflect new capabilities
-````
-
-**After Bug Fix:**
-
-```bash
-# Document in issues/
-.github/memory/issues/bug-description.md
-
-# Include:
-- Problem description
-- Root cause
-- Fix applied
-- Test added
+/memories/
+├── portfolio-complete-structure-2025-11-07.md
+├── portfolio-project-start-2025-11-07.md
+└── homepage-dynamic-enhancement-plan-2025-11-07.md
 ```
-
-**After Architecture Decision:**
-
-```bash
-# Document in decisions/
-.github/memory/decisions/decision-name.md
-
-# Include:
-- Context & problem
-- Options considered
-- Decision & rationale
-- Consequences
-```
-
-### Memory Tools Available
-
-1. **Agent Memory Extension** (`digitarald.agent-memory-0.1.66`)
-
-   - Auto-loads `/memories/` at session start
-   - Use `@memory` tool to update
-   - Persistent across sessions
-
-2. **Git-based Memory** (`.github/memory/`)
-   - Version controlled
-   - Shared with team
-   - Manual updates via file edits
-
-### Memory Naming Convention
-
-```
-Format: [category]-[topic]-[date].md
-
-Examples:
-✅ implementations/one-click-deployment-nov6-2025.md
-✅ decisions/architecture-refactor-nov1-2025.md
-✅ issues/payment-webhook-bug-nov3-2025.md
-
-Avoid:
-❌ implementation.md (too generic)
-❌ feature1.md (unclear)
-❌ notes.md (no context)
-```
-
-### Quick Memory Lookup
-
-| Need Info About... | Check File                                                         |
-| ------------------ | ------------------------------------------------------------------ |
-| Recent work        | `.github/memory/INDEX.md`                                          |
-| Current features   | `.github/memory/current-state.md`                                  |
-| Deployment         | `/memories/one-click-deployment-system.md`                         |
-| Payment system     | `.github/memory/implementations/dynamic-payment-implementation.md` |
-| Known bugs         | `.github/memory/issues/critical-bugs-pitfalls.md`                  |
-| CI/CD rules        | `.github/memory/github-workflows-rules.md`                         |
-| Test status        | `.github/memory/test-status.md`                                    |
-
-### Memory Update Checklist
-
-After implementing new feature:
-
-- [ ] Create implementation file in `/memories/` or `.github/memory/implementations/`
-- [ ] Update `.github/memory/INDEX.md`
-- [ ] Update `.github/memory/current-state.md` if needed
-- [ ] Add links to related docs
-- [ ] Commit memory files to git
 
 ---
 
-**Last Updated:** November 6, 2025  
-**Version:** 3.1 (Added Memory Protocol)  
-**Total Lines:** ~280 (main file)
+## 📊 Quick Stats
+
+| Metric | Value | Status |
+| --------------- | --------- | ---------------- |
+| **Tests** | 34/34 | ✅ 100% passing |
+| **Build Time** | 5-7s | ✅ Fast |
+| **Bundle Size** | 135KB | ✅ Optimized |
+| **Lighthouse** | 95+ | ✅ Excellent |
+| **Pages** | 6 pages | ✅ Complete |
+
+---
+
+## 🏗️ Architecture Quick View
+
+```
+portfolio/
+├── src/                 # Source code
+│   ├── components/     # React & Astro components
+│   │   ├── ContactForm.jsx
+│   │   ├── CustomCursor.jsx
+│   │   ├── Header.astro
+│   │   ├── ProjectCard.jsx
+│   │   ├── ProjectFilter.jsx
+│   │   ├── StatsCounter.jsx (NEW!)
+│   │   └── ThemeToggle.jsx
+│   ├── layouts/        # Layout templates
+│   │   └── BaseLayout.astro
+│   ├── pages/          # Routes (file-based)
+│   │   ├── index.astro
+│   │   ├── about.astro
+│   │   ├── contact.astro
+│   │   ├── projects.astro
+│   │   └── projects/[slug].astro
+│   ├── styles/         # Global styles
+│   │   └── global.css (872 lines)
+│   ├── data/           # Data files
+│   │   └── projects.json
+│   └── utils/          # Utilities
+├── public/             # Static assets
+├── tests/              # Vitest tests
+└── docs/               # Documentation
+```
+
+**Key Principle:** Each component serves a single purpose. Use composition for complex UIs.
+
+---
+
+## 🚀 Quick Start
+
+### Development
+
+```bash
+npm install # Install dependencies
+npm run dev # Start dev server (http://localhost:4321)
+npm run build # Build for production
+npm run preview # Preview production build
+npm test # Run tests
+```
+
+### Pre-Push Checklist
+
+```bash
+npm run build # Build check
+npm test # Test check
+
+# Wait for: ✨ Build success AND all tests passing
+
+git add .
+git commit -m "your message"
+git push
+```
+
+**CRITICAL:** Always build + test before pushing!
+
+---
+
+## 🎨 Design System
+
+### Color Palette (Dark-First)
+
+```css
+/* Background */
+--bg-primary: #0a0a0a;        /* Pure black */
+--bg-secondary: #121212;      /* Cards */
+
+/* Accents */
+--primary-500: #3b82f6;       /* Blue */
+--purple: #a855f7;            /* Purple */
+--cyan: #06b6d4;              /* Cyan */
+
+/* Text */
+--gray-50: #fafafa;           /* Headings */
+--gray-300: #d1d5db;          /* Body */
+```
+
+### Key Features
+
+1. **Global Animated Gradient** - Flows across entire site
+2. **Typewriter Effect** - Homepage hero text
+3. **Animated Stats** - Count-up with glassmorphism
+4. **Custom Cursor** - Blue outline + trail
+5. **Parallax Scroll** - Subtle depth effect
+6. **Page Transitions** - Smooth navigation
+
+---
+
+## 💡 Common Tasks
+
+### Adding New Page
+
+```bash
+# Create page file
+src/pages/newpage.astro
+
+# Will be available at /newpage
+```
+
+### Adding New Component
+
+```bash
+# React component
+src/components/MyComponent.jsx
+
+# Astro component
+src/components/MyComponent.astro
+
+# Usage in page
+<MyComponent client:visible />
+```
+
+### Modifying Styles
+
+```bash
+# Global styles
+src/styles/global.css
+
+# Component-specific styles
+Use Tailwind classes or <style> tag in .astro files
+```
+
+---
+
+## 🧪 Testing Strategy
+
+**Framework:** Vitest with React Testing Library
+
+### Test Structure
+
+```
+tests/
+├── components/         # Component tests
+│   ├── ContactForm.test.jsx
+│   ├── ProjectCard.test.jsx
+│   └── StatsCounter.test.jsx
+└── utils/             # Utility tests
+```
+
+### Running Tests
+
+```bash
+npm test              # Run all tests
+npm run test:ui      # Test UI
+npm run test:coverage # Coverage report
+```
+
+---
+
+## 🎯 Recent Features (November 7, 2025)
+
+### ✅ Phase 9: Dynamic Homepage Enhancement (COMPLETE)
+
+**Status:** Production Ready
+
+**Features:**
+1. Global animated gradient background
+2. Typewriter effect (3 phrases)
+3. Animated stats counter
+4. Glassmorphism cards
+5. Multi-layer shadows (7 layers!)
+6. Gradient glow effects
+
+**Total Changes:**
+- 8 commits
+- 15+ files modified
+- 700+ lines CSS
+- 1 new component
+
+---
+
+## 📝 Next Steps (Optional)
+
+**Phase 10 - Future Enhancements:**
+- [ ] Blog section
+- [ ] Project case studies
+- [ ] Testimonials
+- [ ] Multi-language (EN/ID)
+- [ ] Analytics integration
+
+**Estimated:** 2-4 weeks
+
+---
+
+## 🛡️ Critical Gotchas
+
+1. **Build Errors** - Always check console for errors
+2. **CSS Conflicts** - Use Tailwind utilities over custom CSS
+3. **Component Hydration** - Use correct `client:*` directive
+4. **Image Optimization** - Use Astro `<Image />` component
+5. **Memory Updates** - Update after major changes
+
+---
+
+## 🧠 For AI Agents
+
+**Before making changes:**
+
+1. Check relevant memory files
+2. Understand current state
+3. Run tests after changes
+4. Update memory with summary
+
+**When stuck:**
+
+1. Check `.github/memory/current-state.md`
+2. Read component files for examples
+3. Search memory for similar tasks
+
+**Best practices:**
+
+- Keep files modular
+- Test new features
+- Document in memory
+- Use established patterns
+
+---
+
+## 📞 Memory Files Reference
+
+**Primary Documentation:**
+
+1. `/memories/portfolio-complete-structure-2025-11-07.md` - Full structure & features
+2. `/memories/portfolio-project-start-2025-11-07.md` - Master reference & progress
+3. `/memories/homepage-dynamic-enhancement-plan-2025-11-07.md` - Enhancement plan
+
+**Quick Access:**
+
+- **Structure:** `.github/memory/INDEX.md`
+- **Status:** `.github/memory/current-state.md`
+- **Components:** `/memories/portfolio-complete-structure-2025-11-07.md`
+- **Recent Work:** `/memories/portfolio-project-start-2025-11-07.md`
+
+---
+
+**Last Updated:** November 7, 2025, 19:40  
+**Version:** 2.0.0  
+**Status:** 🚀 PRODUCTION READY

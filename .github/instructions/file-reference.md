@@ -1,161 +1,207 @@
-# File-Specific Reference
+# File Reference - Portfolio Project
 
-## Core Files
+Quick lookup guide for portfolio files and their purposes.
 
-### index.js
+---
 
-Entry point. Handles WhatsApp lifecycle (qr, ready, authenticated, disconnected, error events). Sets up SIGINT/SIGTERM handlers for graceful shutdown. PM2-friendly. Initializes PaymentReminderService and cleanup intervals.
+## 📁 Core Files
 
-### chatbotLogic.js
+### Configuration Files
 
-Bootstrap layer that wires together handlers and services. Delegates actual business logic to modular handlers in `src/handlers/`. Routes messages through MessageRouter to appropriate handler.
+**package.json** - Project dependencies & scripts
+- Astro 4.0, React 18.2, Tailwind 3.4, Framer Motion 11.0
+- Vitest 4.0, Testing Library 16.3
+- Scripts: dev, build, preview, test
 
-### sessionManager.js
+**astro.config.mjs** - Astro configuration
+- React integration
+- Tailwind integration
+- Output: static (SSG)
 
-Key-value store wrapping a Map. Every method takes customerId (phone number like "1234567890@c.us"). Auto-updates lastActivity timestamp. Includes rate limiting (20 msg/min). Session schema includes `cart: []`, `wishlist: []`, `step`, `orderId`, payment fields.
+**tailwind.config.cjs** - Tailwind customization
+- Dark-first color palette
+- Custom shadows & gradients
+- Typography settings
 
-### config.js
+**vitest.config.js** - Test configuration
+- JSDOM environment
+- Test globals enabled
+- React Testing Library setup
+
+---
+
+## 🧩 Components (`src/components/`)
+
+### React Components (.jsx)
 
-Main configuration file. Contains product catalog, payment methods, admin settings, and system configuration. Use `getAllProducts()` to get merged product list.
+**ContactForm.jsx** - Contact form with validation
+- Client-side validation
+- Honeypot spam protection
+- Formspree integration ready
 
-## Handler Files
+**CustomCursor.jsx** - Custom cursor + trail effect
+- Blue outline cursor (20px)
+- Trail effect (6px dot)
+- Mobile detection (disabled on touch)
+- Hover expansion (1.5x scale)
 
-### src/handlers/BaseHandler.js
+**ProjectCard.jsx** - Project card with hover effects
+- Image handling
+- Tag display
+- Hover scale + image zoom
+- Link to project detail
 
-Abstract base class providing common functionality for all handlers. Inherit from this when creating new handlers. Provides session access, logging, and error handling patterns.
+**ProjectFilter.jsx** - Category filtering
+- All/Premium/VCC filters
+- Active state styling
+- Smooth transitions
 
-### src/handlers/CustomerHandler.js
+**StatsCounter.jsx** (NEW!) - Animated statistics
+- IntersectionObserver trigger
+- Count-up animation
+- Glassmorphism styling
+- Gradient glow on hover
 
-Main customer interaction handler. Handles menu, browsing, product selection, cart management, checkout flow, order tracking. ~570 lines. Delegates to CustomerWishlistHandler and CustomerCheckoutHandler.
+**ThemeToggle.jsx** - Dark/light toggle (legacy, not used)
 
-### src/handlers/AdminHandler.js
+### Astro Components (.astro)
 
-Admin command handler. Manages admin operations like stats, broadcast, order approval, stock management. ~686 lines. Delegates to AdminInventoryHandler, AdminReviewHandler, AdminAnalyticsHandler.
+**Header.astro** - Navigation header
+- Dark backdrop with blur
+- Responsive menu
+- Active page indicator
 
-### src/handlers/AIFallbackHandler.js
+---
 
-AI-powered fallback for unrecognized messages. Uses RelevanceFilter, IntentClassifier, and PromptBuilder. ~174 lines. Integrates with Gemini API for intelligent responses.
+## 📄 Pages (`src/pages/`)
 
-## Service Files
+### Main Pages
 
-### src/services/ai/AIService.js
+**index.astro** - Homepage
+- Hero with typewriter effect
+- Animated stats counter
+- Featured projects grid
+- CTA section
 
-Gemini 2.5 Flash integration. Handles AI API calls, rate limiting, cost tracking. Used for typo correction, product Q&A, and intelligent fallback.
+**about.astro** - About page
+- Biography section
+- Tech stack grid
+- Achievement highlights
+- Currently learning section
 
-### src/services/ai/AIIntentClassifier.js
+**contact.astro** - Contact page
+- Contact form integration
+- Contact info cards
+- Social links
 
-Classifies user intent into 8 categories: product_qa, features, comparison, pricing, availability, order_help, troubleshoot, general_info.
+**projects.astro** - Projects listing
+- Category filtering
+- Project grid
+- Search/filter functionality
 
-### src/services/ai/AIPromptBuilder.js
+**projects/[slug].astro** - Project detail
+- Dynamic routing
+- Full project details
+- Tech stack
+- Challenges & impact sections
 
-Builds context-aware prompts for AI. Injects shop context (products, prices, policies) and intent-specific instructions.
+---
 
-### src/services/session/SessionService.js
+## 🎨 Styles (`src/styles/`)
 
-Session CRUD operations. Abstracts session storage (Map or Redis).
+**global.css** (872 lines) - All global styles
+- Tailwind imports
+- CSS custom properties
+- Base styles
+- Component styles (.stat-card, .dark-card, etc.)
+- Animation keyframes
+- Micro-interactions
+- Phase 8 features (cursor, parallax)
+- Homepage dynamic (typewriter, stats)
+- Media queries
+- Reduced motion overrides
 
-### src/services/payment/PaymentService.js
+**Key Classes:**
+- `.hero-gradient-bg` - Animated gradient background
+- `.stat-card` - Glassmorphism stats card
+- `.glow-on-hover` - Gradient glow effect
+- `.gradient-text` - Animated gradient text
+- `.magnetic-button` - Magnetic hover effect
+- `.pulse-glow` - Pulsing glow animation
 
-Payment abstraction layer. Handles Xendit integration, QRIS generation, payment verification.
+---
 
-### src/services/product/ProductService.js
+## 📊 Data (`src/data/`)
 
-Product operations. Search, filter, get details, manage catalog.
+**projects.json** - Project data
+- 2 sample projects (WhatsApp chatbot, CryptoStock)
+- Structure: id, title, description, image, tags, features, tech, challenges, impact
 
-### src/services/wishlist/WishlistService.js
+---
 
-Wishlist management. Add, remove, view, move to cart.
+## 🧪 Tests (`tests/`)
 
-### src/services/review/ReviewService.js
+**Component Tests:**
+- ContactForm.test.jsx
+- ProjectCard.test.jsx
+- (Add more as needed)
 
-Product reviews and ratings. Add, view, delete, calculate averages.
+**Test Framework:** Vitest + React Testing Library
+- Total: 34 tests
+- Passing: 100%
 
-### src/services/promo/PromoService.js
+---
 
-Promo code management. Create, validate, apply discounts, track usage.
+## 📐 Layouts (`src/layouts/`)
 
-## Router & Message Files
+**BaseLayout.astro** - Main layout template
+- Global gradient background
+- Noise texture overlay
+- Meta tags (SEO)
+- JSON-LD schema
+- View Transitions
+- Custom cursor integration
 
-### lib/messageRouter.js
+---
 
-Central message routing. Handles rate limiting, payment proof detection, wishlist commands, AI fallback integration. Routes to appropriate handler based on message content and session state.
+## 🌐 Public Assets (`public/`)
 
-### lib/inputValidator.js
+**Images:**
+- favicon.svg - Site favicon
+- og-default.png - Default OG image
 
-Input validation and sanitization. Use this before processing any user input to prevent injection attacks and handle edge cases.
+**Documents:**
+- resume.pdf - Downloadable resume
 
-### lib/uiMessages.js
+---
 
-All customer-facing message templates. Centralized for consistency and easy i18n. Heavy emoji usage for mobile-friendly readability.
+## 📚 Documentation (`docs/`)
 
-### lib/paymentMessages.js
+- PORTFOLIO_COMPLETE_GUIDE.md - User-facing documentation
+- DEV_ROADMAP.md - Development roadmap
+- (Other planning docs)
 
-Payment-related message templates. QRIS instructions, payment confirmations, error messages.
+---
 
-## Middleware Files
-
-### src/middleware/RelevanceFilter.js
-
-Spam detection and message relevance scoring for AI. Filters out greetings, single characters, test messages. Detects shop-related questions.
-
-### src/utils/InputSanitizer.js
-
-Advanced input sanitization. XSS protection, SQL injection prevention, command injection blocking, PII masking.
-
-## Configuration Files
-
-### src/config/app.config.js
-
-System settings: currency, session timeout, rate limits, feature flags.
-
-### src/config/products.config.js
-
-Product catalog: premium accounts (Netflix, Spotify, etc.), virtual cards.
-
-### src/config/payment.config.js
-
-Payment accounts: e-wallet (DANA, OVO, GoPay), bank transfer (BCA, Mandiri, BRI, BNI).
-
-### src/config/ai.config.js
-
-AI settings: model configuration, prompts, rate limits, feature toggles, cost tracking.
-
-## Utility Files
-
-### src/utils/FuzzySearch.js
-
-Fuzzy string matching for product search. Handles typos, partial matches, configurable threshold.
-
-### src/utils/ValidationHelpers.js
-
-Common validation functions. Phone numbers, emails, order IDs, dates.
-
-### src/utils/Constants.js
-
-System constants. Order statuses, payment methods, error codes.
-
-## Test Files
-
-### tests/unit/
-
-Unit tests for individual components. Each file tests one module in isolation.
-
-### tests/integration/
-
-Integration tests for service interactions. Tests complete flows like checkout, wishlist.
-
-### tests/e2e/
-
-End-to-end tests (future). Will test complete user journeys.
-
-## Quick Lookup
+## 🎯 Quick Lookup
 
 **Need to modify:**
 
-- Customer messages → `lib/uiMessages.js`
-- Payment flow → `src/handlers/CustomerCheckoutHandler.js`
-- Admin commands → `src/handlers/AdminHandler.js`
-- Product catalog → `config.js` or `src/config/products.config.js`
-- AI behavior → `src/config/ai.config.js`
-- Session logic → `sessionManager.js`
-- Routing logic → `lib/messageRouter.js`
+- **Homepage hero** → `src/pages/index.astro`
+- **Navigation** → `src/components/Header.astro`
+- **Stats section** → `src/components/StatsCounter.jsx`
+- **Project list** → `src/data/projects.json`
+- **Styles** → `src/styles/global.css`
+- **SEO** → `src/layouts/BaseLayout.astro`
+- **Contact form** → `src/components/ContactForm.jsx`
+
+**Common files:**
+
+- **Colors** → `tailwind.config.cjs` + `src/styles/global.css` (CSS variables)
+- **Fonts** → `src/layouts/BaseLayout.astro` (Google Fonts)
+- **Tests** → `tests/components/`
+
+---
+
+**Last Updated:** November 7, 2025, 19:40  
+**Total Files:** ~50 files (src + tests + docs)
