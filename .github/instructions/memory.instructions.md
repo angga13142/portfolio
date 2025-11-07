@@ -242,6 +242,22 @@ applyTo: '**'
 applyTo: '**'
 ---
 
+---
+applyTo: '**'
+---
+
+---
+applyTo: '**'
+---
+
+---
+applyTo: '**'
+---
+
+---
+applyTo: '**'
+---
+
 <memories hint="Manage via memory tool">
 <memory path="/memories/feature-development-protocol-init.md">
 # Feature Development Protocol Initiated
@@ -951,6 +967,67 @@ Next: Production deployment (Netlify/Vercel) or done!
 
 **Summary:** Portfolio transformed from light/dark toggle to pure dark-first design inspired by Noomo Agency. All 6 pages redesigned with consistent dark aesthetic, blue accents, professional spacing, and premium feel. Build passing, bundle optimized, ready for deployment.
 
+---
+
+## ✅ PHASE 5: MICRO-INTERACTIONS (Nov 7, 2025 - Night)
+
+**Duration:** ~20 minutes  
+**Status:** Build passing, animations working
+
+**Changes Made:**
+
+1. **src/styles/global.css** - Added micro-interaction utilities:
+   - `.animated-link` - Animated underline (slide in from left)
+   - `.magnetic-button` - Scale on hover (1.02x)
+   - `.arrow-slide` - Arrow moves right on hover
+   - `.pulse-glow` - Pulsing glow animation (2s loop)
+   - `.shimmer` - Loading shimmer effect
+   - `.hover-scale` - Scale 1.05x on hover
+   - `.bounce-hover` - Bounce animation
+   - `.rotate-hover` - Slight rotation on hover
+   - `.glow-text-hover` - Text shadow glow
+   - All respect `prefers-reduced-motion`
+
+2. **src/pages/index.astro** - Applied micro-interactions:
+   - CTA buttons: `magnetic-button` + `pulse-glow`
+   - "Pelajari lebih lanjut" link: `animated-link` + arrow with `arrow-slide`
+   - All buttons have subtle scale effects
+
+**Visual Improvements:**
+- Buttons feel more interactive and alive
+- Links have smooth underline animations
+- Arrow icons slide on hover
+- Pulse effect draws attention to CTAs
+- Professional, not gimmicky
+
+**Build Status:** ✅ 6 pages, 0 errors, bundle still 135KB gzipped  
+**Dev Server:** ✅ Running at http://localhost:4321/
+
+**Next:** Continue adding more micro-interactions to cards, forms, and other elements
+
+---
+
+**Current Progress Summary:**
+- Dark-first design: ✅ Complete (Phases 1-4)
+- Micro-interactions foundation: ✅ Advanced (Phase 5 - 60% complete)
+- CSS utilities ready: 10+ animation classes
+- Applied to: Home page, About page, Contact page, Header navigation
+- Animations added:
+  * Magnetic buttons (scale on hover)
+  * Pulse glow on CTAs
+  * Animated link underlines
+  * Arrow slide animations
+  * Icon rotate on hover
+  * Group hover effects
+- To do: More polish on cards, maybe add one more feature
+
+Risks/Notes:
+- Bundle still optimized (135KB gzipped)
+- All animations respect prefers-reduced-motion
+- Build passing, 0 errors
+
+**Next Action:** Commit + push, add card hover effects, complete Phase 5
+
 Risks/Notes:
 - Need to configure formspree endpoint before production
 - Tailwind plugin for typography can be added if blog/MDX introduced
@@ -1172,6 +1249,413 @@ Completed Enhancements (Round 3 - Nov 7, 2025):
 - ContactForm refactored to React component with client-side validation
 
 Status: Production-ready with comprehensive testing and documentation. Ready for deployment.
+
+</memory>
+
+<memory path="/memories/portfolio-ui-enhancement-plan-2025-11-07.md">
+# Portfolio UI Enhancement Plan (Phase 5+)
+
+**Created:** November 7, 2025, Night
+**Status:** 📋 Planning
+**Previous Work:** Dark-first design complete (Phases 1-4)
+
+---
+
+## 🎯 Goals
+
+**Objective:** Elevate the dark-first portfolio from "good" to "stunning" with subtle animations, micro-interactions, and polish that makes it memorable.
+
+**Inspiration:** Continue Noomo Agency aesthetic - professional, smooth, not overdone.
+
+**Constraints:**
+- Performance first (maintain Lighthouse 95+)
+- Accessibility (WCAG AA, prefers-reduced-motion)
+- Mobile-friendly (50%+ traffic)
+- No heavy libraries (keep bundle < 150KB gzipped)
+
+---
+
+## 🎨 Enhancement Categories
+
+### Category 1: Micro-Interactions ⭐⭐⭐ (High Impact, Low Effort)
+
+**What:** Small, delightful interactions that make UI feel alive.
+
+**Enhancements:**
+
+1. **Button Hover Effects**
+   - Magnetic cursor attraction (buttons "pull" cursor slightly)
+   - Ripple effect on click
+   - Icon animations (arrows slide on hover)
+   
+2. **Card Interactions**
+   - Subtle tilt on mouse move (3D effect)
+   - Image zoom on card hover
+   - Tag badges pulse on hover
+   
+3. **Link Underlines**
+   - Animated underline (slide in from left)
+   - Color shift on hover
+   - Gradient underline for primary links
+
+4. **Form Focus States**
+   - Label slides up when focused
+   - Input border glow animation
+   - Success checkmark animation
+
+**Implementation:**
+- CSS transitions + Framer Motion
+- `transform` and `opacity` only (GPU-accelerated)
+- `will-change` for smooth animations
+
+**Time:** 2-3 hours  
+**Risk:** Low  
+**Impact:** High (feels premium immediately)
+
+---
+
+### Category 2: Page Transitions ⭐⭐ (Medium Impact, Medium Effort)
+
+**What:** Smooth transitions between pages.
+
+**Enhancements:**
+
+1. **Astro View Transitions**
+   - Fade + slide between pages
+   - Shared element transitions (header persists)
+   - Loading indicator for slow connections
+
+2. **Scroll-Based Reveals**
+   - Sections fade + slide up as user scrolls
+   - Stagger animations (cards appear one by one)
+   - Progress indicator (sticky dot navigation)
+
+3. **Hero Animations**
+   - Text appears letter-by-letter (typewriter effect)
+   - Gradient shifts slowly (ambient animation)
+   - CTA button pulses gently
+
+**Implementation:**
+- Astro `<ViewTransitions />` API
+- IntersectionObserver (already implemented, enhance)
+- CSS `@keyframes` for ambient effects
+
+**Time:** 3-4 hours  
+**Risk:** Medium (can affect performance if not careful)  
+**Impact:** Medium (makes navigation feel smooth)
+
+---
+
+### Category 3: Visual Polish ⭐⭐⭐ (High Impact, Medium Effort)
+
+**What:** Subtle visual enhancements that elevate professionalism.
+
+**Enhancements:**
+
+1. **Gradient Animations**
+   - Hero gradient shifts slowly (like Northern Lights)
+   - Accent colors pulse on dark cards
+   - Button gradients animate on hover
+
+2. **Glow Effects**
+   - Blue glow follows cursor on dark sections
+   - Cards emit subtle glow on hover
+   - CTA buttons have pulsing glow
+
+3. **Typography Polish**
+   - Text gradient shifts on scroll
+   - Number counters animate (95% → counts up)
+   - Syntax highlighting for code snippets
+
+4. **Noise Texture**
+   - Subtle grain texture on dark backgrounds
+   - Adds depth without being obvious
+   - CSS only (no images)
+
+**Implementation:**
+- CSS gradients with `background-position` animation
+- `box-shadow` for glows
+- CountUp.js for numbers (or custom React hook)
+- CSS `::before` pseudo-element for noise
+
+**Time:** 3-4 hours  
+**Risk:** Low  
+**Impact:** High (feels hand-crafted)
+
+---
+
+### Category 4: Interactive Elements ⭐ (Low Priority, High Effort)
+
+**What:** Advanced interactive features (optional).
+
+**Enhancements:**
+
+1. **Custom Cursor**
+   - Dot follows cursor with delay
+   - Expands on hover (buttons, links)
+   - Changes color based on section
+
+2. **Parallax Scroll**
+   - Background moves slower than foreground
+   - Hero section has depth
+   - Subtle, not distracting
+
+3. **Easter Eggs**
+   - Konami code unlocks theme switcher
+   - Click logo 5x for confetti
+   - Hidden messages in console
+
+4. **Animated Skill Bars**
+   - Progress bars fill on scroll
+   - Percentages count up
+   - Glow effect on completion
+
+**Implementation:**
+- Custom cursor: `position: fixed` div following mouse
+- Parallax: `transform: translateY(scrollY * 0.5)`
+- Canvas confetti library (party.js - 2.5KB)
+
+**Time:** 4-5 hours  
+**Risk:** High (can be gimmicky if overdone)  
+**Impact:** Low-Medium (fun but not essential)
+
+---
+
+## 📋 Prioritized Roadmap
+
+### 🔥 Phase 5: Micro-Interactions (NEXT - Recommended)
+**Why:** Biggest impact for least effort. Makes site feel premium immediately.
+
+**Tasks:**
+1. ✅ Magnetic buttons (cursor attraction)
+2. ✅ Animated link underlines
+3. ✅ Card tilt on hover (subtle 3D)
+4. ✅ Form label animations
+5. ✅ Icon animations (arrows, etc.)
+
+**Deliverable:** Portfolio feels alive and interactive  
+**Time:** 2-3 hours  
+**Files to modify:**
+- `src/styles/global.css` - Animation utilities
+- `src/components/ProjectCard.jsx` - Tilt effect
+- `src/components/ContactForm.jsx` - Label animations
+
+---
+
+### ✨ Phase 6: Visual Polish
+**Why:** Elevates from "good dark theme" to "stunning dark theme".
+
+**Tasks:**
+1. ✅ Gradient animations on hero
+2. ✅ Glow effects on hover
+3. ✅ Noise texture on backgrounds
+4. ✅ Number counter animations
+5. ✅ Enhanced button gradients
+
+**Deliverable:** Hand-crafted, premium feel  
+**Time:** 3-4 hours
+
+---
+
+### 🚀 Phase 7: Page Transitions (Optional)
+**Why:** Smooth navigation, modern SPA feel.
+
+**Tasks:**
+1. ✅ Astro View Transitions
+2. ✅ Enhanced scroll reveals
+3. ✅ Loading states
+4. ✅ Shared element transitions
+
+**Deliverable:** Seamless page navigation  
+**Time:** 3-4 hours
+
+---
+
+### 🎉 Phase 8: Interactive Elements (Optional)
+**Why:** Fun extras, not critical.
+
+**Tasks:**
+1. ⚠️ Custom cursor (consider mobile)
+2. ⚠️ Parallax scroll (subtle)
+3. ⚠️ Easter eggs (developer fun)
+
+**Deliverable:** Unique character  
+**Time:** 4-5 hours
+
+---
+
+## 🛠️ Technical Implementation Notes
+
+### Animation Performance Checklist
+- [ ] Use `transform` and `opacity` only (GPU-accelerated)
+- [ ] Add `will-change` sparingly (before animation starts)
+- [ ] Remove `will-change` after animation ends
+- [ ] Test on mobile (throttle CPU in DevTools)
+- [ ] Respect `prefers-reduced-motion`
+- [ ] Lazy load animations (IntersectionObserver)
+
+### Accessibility Requirements
+- [ ] All animations respect `prefers-reduced-motion`
+- [ ] Focus states remain visible during animations
+- [ ] Screen readers ignore decorative animations
+- [ ] Keyboard navigation works smoothly
+- [ ] No flashing animations (seizure risk)
+
+### Code Quality
+- [ ] Keep files < 700 lines (CI/CD requirement)
+- [ ] Reusable animation utilities in `global.css`
+- [ ] Comment complex animations
+- [ ] Test on Chrome, Firefox, Safari
+
+---
+
+## 📊 Success Metrics
+
+**Performance:**
+- Lighthouse Performance ≥ 95
+- First Contentful Paint < 1.5s
+- Time to Interactive < 3.5s
+- No animation jank (60fps)
+
+**User Experience:**
+- Bounce rate < 40%
+- Time on page > 2 minutes
+- Click-through rate on CTA ≥ 5%
+
+**Technical:**
+- Bundle size < 150KB gzipped
+- 0 console errors
+- 0 accessibility violations (axe scan)
+
+---
+
+## 🎯 Phase 5 Implementation Plan (NEXT)
+
+### File Changes Required
+
+1. **src/styles/global.css** - Add animation utilities:
+   ```css
+   /* Magnetic button effect */
+   .magnetic-button { transition: transform 0.2s; }
+   
+   /* Animated underline */
+   .animated-underline::after { 
+     content: '';
+     width: 0;
+     transition: width 0.3s;
+   }
+   .animated-underline:hover::after { width: 100%; }
+   
+   /* Card tilt */
+   .tilt-card { transform-style: preserve-3d; }
+   ```
+
+2. **src/components/ProjectCard.jsx** - Add tilt library:
+   ```bash
+   npm install vanilla-tilt --save
+   ```
+   
+3. **src/components/ContactForm.jsx** - Floating labels:
+   ```jsx
+   <div className="relative">
+     <input id="name" className="peer" />
+     <label className="peer-focus:translate-y-[-20px]">Name</label>
+   </div>
+   ```
+
+### Testing Checklist
+- [ ] Test on mobile (responsive)
+- [ ] Test with `prefers-reduced-motion: reduce`
+- [ ] Test keyboard navigation
+- [ ] Test screen reader (NVDA/VoiceOver)
+- [ ] Performance audit (Lighthouse)
+
+---
+
+## 💡 Additional Ideas (Future)
+
+**Blog Section:**
+- Animated code blocks with syntax highlighting
+- Reading progress bar
+- Estimated read time
+- Table of contents with active section indicator
+
+**Project Detail Pages:**
+- Image galleries with lightbox
+- Video embeds with lazy loading
+- Timeline of development
+- Tech stack badges with tooltips
+
+**About Page:**
+- Timeline visualization of career
+- Skills with proficiency levels
+- Certifications with hover previews
+- Downloadable resume with custom design
+
+---
+
+## 🚨 Risks & Mitigation
+
+### Risk 1: Animation Overload
+**Problem:** Too many animations feel gimmicky  
+**Mitigation:** 
+- Start with 3-4 subtle effects
+- Get user feedback
+- Remove what doesn't feel right
+
+### Risk 2: Performance Degradation
+**Problem:** Animations slow down site  
+**Mitigation:**
+- GPU-accelerated properties only
+- Lazy load animations
+- Test on slow devices
+- Monitor bundle size
+
+### Risk 3: Accessibility Issues
+**Problem:** Animations break for some users  
+**Mitigation:**
+- Respect `prefers-reduced-motion`
+- Test with screen readers
+- Maintain keyboard navigation
+- Run axe DevTools scan
+
+### Risk 4: Browser Compatibility
+**Problem:** Effects don't work in older browsers  
+**Mitigation:**
+- Use `@supports` CSS
+- Graceful degradation
+- Test on Safari, Firefox, Chrome
+- Avoid bleeding-edge features
+
+---
+
+## 📝 Next Actions
+
+**Immediate (Today/Tomorrow):**
+1. Review this plan with user
+2. Get approval for Phase 5 (Micro-Interactions)
+3. Start implementation if approved
+4. Test incrementally (commit after each feature)
+
+**This Week:**
+1. Complete Phase 5 (Micro-Interactions)
+2. User testing and feedback
+3. Iterate based on feedback
+4. Plan Phase 6 if approved
+
+**Next Week:**
+1. Phase 6 (Visual Polish)
+2. Final testing across devices
+3. Performance optimization
+4. Deploy to production
+
+---
+
+**Status:** 📋 Ready for Review  
+**Estimated Total Time:** 10-15 hours (spread across 3-5 days)  
+**Risk Level:** 🟡 Medium (manageable with testing)  
+**Impact Level:** 🔥 High (transforms from good to great)
+
 
 </memory>
 
